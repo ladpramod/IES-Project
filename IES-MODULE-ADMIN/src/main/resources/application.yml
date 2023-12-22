@@ -1,0 +1,56 @@
+server:
+  port: 8184
+  error:
+    whitelabel:
+      enabled: false
+
+
+#Database configuration
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  datasource:
+    url: jdbc:mysql://localhost:3306/ies_app_admin
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: jainpramodlad@gmail.com
+    password: kcosvqiknmkbnhol
+    protocol: smtp
+    properties:
+     mail:
+      smtp:
+        auth: true
+        starttls:
+         enable: true
+
+  application:
+    name: IES-MODULE-ADMIN
+  boot:
+    admin:
+      client:
+        url: http://localhost:1111/
+
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+
+
+
+
